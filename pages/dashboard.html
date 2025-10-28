@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FinanceIQ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div id="grid-pattern"></div>
+    <div id="animated-bg"></div>
+    <div id="floating-shapes"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/dashboard" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>FinanceIQ</span>
+            </a>
+            <nav class="nav">
+                <a href="/features">Features</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+                <a href="/calculators">Calculators</a>
+                <a href="/budget">Budget</a>
+            </nav>
+            <div class="auth-buttons">
+                <span id="user-email" class="user-email"></span>
+                <button onclick="window.location.href='/'" class="btn-link">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <h1 id="welcome-title">Welcome back!</h1>
+                <p>Here's your financial overview for today</p>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card emerald">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="kpi-change positive">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            </svg>
+                            +12.5%
+                        </div>
+                    </div>
+                    <h3>Total Revenue</h3>
+                    <div class="kpi-value" id="kpi-total-revenue">₹0</div>
+                </div>
+
+                <div class="kpi-card cyan">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="kpi-change positive">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            </svg>
+                            +8.3%
+                        </div>
+                    </div>
+                    <h3>Net Profit</h3>
+                    <div class="kpi-value" id="kpi-net-profit">₹0</div>
+                </div>
+
+                <div class="kpi-card purple">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="kpi-change negative">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                            </svg>
+                            -4.2%
+                        </div>
+                    </div>
+                    <h3>Total Expenses</h3>
+                    <div class="kpi-value" id="kpi-total-expenses">₹0</div>
+                </div>
+
+                <div class="kpi-card orange">
+                    <div class="kpi-header">
+                        <div class="kpi-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="kpi-change positive">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            </svg>
+                            +18.7%
+                        </div>
+                    </div>
+                    <h3>Active Accounts</h3>
+                    <div class="kpi-value" id="kpi-active-accounts">0</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="chart-controls">
+                <input type="file" id="upload-transactions" accept=".json,.csv">
+                <label for="upload-transactions" class="upload-btn">Choose file</label>
+                <button id="toggleExpenseChartBtn" class="btn-link">Toggle Expenditure Chart</button>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card chart-card-large">
+                    <div class="chart-header">
+                        <h3>Revenue vs. Expenses</h3>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot emerald"></span>
+                                <span>Revenue</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot cyan"></span>
+                                <span>Expenses</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container chart-small">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Expense Breakdown</h3>
+                    <div class="chart-container chart-small" id="expenditureChartWrapper">
+                        <canvas id="expenditureChart"></canvas>
+                    </div>
+                    <div id="expense-legend" class="expense-legend"></div>
+                    <!-- Small pie chart example -->
+                    <div class="chart-container chart-small">
+                        <canvas id="spendingPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions Table -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>Recent Transactions</h3>
+                    <div class="anomaly-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <span id="anomaly-count">0 anomalies detected</span>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table id="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th class="text-right">Amount</th>
+                                <th class="text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-body">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <!-- PapaParse for robust CSV parsing (handles quoted fields, commas, types) -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <!-- date-fns for date parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/dist/date-fns.min.js"></script>
+    <!-- Chart.js date adapter so time-scale axes work correctly -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</body>
+</html>
