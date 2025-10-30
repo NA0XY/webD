@@ -40,11 +40,11 @@ function handleDemoLogin() {
         id: 'demo-user',
         email: 'demo@financeiq.com'
     }));
-    window.location.href = 'pages/dashboard.html';
+    window.location.href = '/webD/pages/dashboard.html';
 }
 function handleSignOut() {
     localStorage.removeItem('user');
-    window.location.href = '../index.html';
+    window.location.href = '/webD/';
 }
 function checkAuth() {
     const user = JSON.parse(localStorage.getItem('user') || 'null');
@@ -52,7 +52,7 @@ function checkAuth() {
     const protectedPages = ['dashboard.html', 'calculators.html', 'budget.html'];
     const isProtectedPage = protectedPages.some(page => currentPage.includes(page));
     if (!user && isProtectedPage) {
-        window.location.href = '../index.html';
+        window.location.href = '/webD/';
         return null;
     }
     return user;
