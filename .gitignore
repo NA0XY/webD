@@ -13,6 +13,9 @@ yarn.lock
 .env.test
 .env.production
 
+# User data (security)
+server/users.json
+
 # Operating System files
 .DS_Store
 .DS_Store?

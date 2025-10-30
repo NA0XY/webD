@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Management - FinanceIQ</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Animated Background Layers -->
+    <div id="grid-pattern"></div>
+    <div id="animated-bg"></div>
+    <div id="floating-shapes"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="dashboard.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>FinanceIQ</span>
+            </a>
+            <nav class="nav">
+                <a href="features.html">Features</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="calculators.html">Calculators</a>
+                <a href="budget.html" class="active">Budget</a>
+            </nav>
+            </nav>
+            <div class="auth-buttons">
+                <span id="user-email" class="user-email"></span>
+                <button onclick="window.location.href='/'" class="btn-link">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content budget-hero">
+                    <h1 class="hero-title budget-title">
+                        Budget Management
+                    </h1>
+                    <p class="budget-description">
+                        Take control of your finances with smart budget planning, expense tracking, and goal setting.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Overview -->
+        <section class="budget-section">
+            <div class="container">
+                <div class="budget-overview">
+                    <div class="overview-card">
+                        <h3>Total Budget</h3>
+                        <div class="amount" id="total-budget">₹0.00</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="budget-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Total Spent</h3>
+                        <div class="amount spent" id="total-spent">₹0.00</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill spent" id="spent-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <h3>Remaining</h3>
+                        <div class="amount remaining" id="remaining-budget">₹0.00</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill remaining" id="remaining-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Categories -->
+                <div class="budget-categories">
+                    <h2>Budget Categories</h2>
+                    <div class="categories-grid" id="categories-grid">
+                        <!-- Categories will be dynamically added here -->
+                    </div>
+
+                    <!-- Add Category Form -->
+                    <div class="add-category-form">
+                        <h3>Add New Category</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="category-name">Category Name</label>
+                                <input type="text" id="category-name" placeholder="e.g., Food & Dining">
+                            </div>
+                            <div class="form-group">
+                                <label for="category-budget">Monthly Budget ($)</label>
+                                <input type="number" id="category-budget" placeholder="500" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="category-color">Color</label>
+                                <select id="category-color">
+                                    <option value="#10b981">Emerald</option>
+                                    <option value="#06b6d4">Cyan</option>
+                                    <option value="#8b5cf6">Purple</option>
+                                    <option value="#f59e0b">Orange</option>
+                                    <option value="#ef4444">Red</option>
+                                    <option value="#3b82f6">Blue</option>
+                                </select>
+                            </div>
+                            <button onclick="addCategory()" class="btn-primary">Add Category</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expense Tracking -->
+                <div class="expense-tracking">
+                    <h2>Expense Tracking</h2>
+                    <div class="expense-form">
+                        <h3>Add Expense</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="expense-description">Description</label>
+                                <input type="text" id="expense-description" placeholder="Coffee at Starbucks">
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-amount">Amount ($)</label>
+                                <input type="number" id="expense-amount" placeholder="5.50" min="0" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-category">Category</label>
+                                <select id="expense-category">
+                                    <option value="">Select Category</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-date">Date</label>
+                                <input type="date" id="expense-date" value="">
+                            </div>
+                            <button onclick="addExpense()" class="btn-primary">Add Expense</button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Expenses -->
+                    <div class="recent-expenses">
+                        <h3>Recent Expenses</h3>
+                        <div class="expenses-list" id="expenses-list">
+                            <!-- Expenses will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Goals -->
+                <div class="budget-goals">
+                    <h2>Budget Goals</h2>
+                    <div class="goals-grid" id="goals-grid">
+                        <!-- Goals will be dynamically added here -->
+                    </div>
+
+                    <!-- Add Goal Form -->
+                    <div class="add-goal-form">
+                        <h3>Set New Goal</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="goal-name">Goal Name</label>
+                                <input type="text" id="goal-name" placeholder="Emergency Fund">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-target">Target Amount ($)</label>
+                                <input type="number" id="goal-target" placeholder="10000" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal-deadline">Target Date</label>
+                                <input type="date" id="goal-deadline">
+                            </div>
+                            <button onclick="addGoal()" class="btn-primary">Set Goal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                        <span>FinanceIQ</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="dashboard.html">Dashboard</a>
+                        <a href="features.html">Features</a>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="calculators.html">Calculators</a>
+                        <a href="budget.html">Budget</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 FinanceIQ. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</body>
+</html>

@@ -1338,7 +1338,7 @@ let transactions = [
     { id: '10', date: '2025-10-22', description: 'Travel Expenses', amount: 4200, status: 'failed' }
 ];
 window.transactions = transactions;
-const DEFAULT_CSV_PATH = 'data/default-transactions.csv';
+const DEFAULT_CSV_PATH = '../data/default-transactions.csv';
 function normalizeDate(value) {
     if (!value) return value;
     const trimmed = value.toString().trim();

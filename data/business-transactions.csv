@@ -1,0 +1,51 @@
+id,date,description,amount,status
+1,2025-10-01,Client Payment - TechCorp Ltd,₹185000,completed
+2,2025-10-01,Office Rent - October,₹45000,completed
+3,2025-10-02,Software Licenses - Annual,₹28500,completed
+4,2025-10-02,Freelancer Payment - Design Work,₹32000,completed
+5,2025-10-03,Client Payment - StartupHub,₹95000,completed
+6,2025-10-03,Marketing Campaign - Social Media,₹15000,completed
+7,2025-10-04,Electricity Bill,₹8500,completed
+8,2025-10-04,Internet & Phone Services,₹4200,completed
+9,2025-10-05,Client Payment - Digital Solutions,₹125000,completed
+10,2025-10-05,Employee Salaries - October,₹180000,completed
+11,2025-10-06,Office Supplies & Stationery,₹6500,completed
+12,2025-10-06,Cloud Hosting Services,₹12000,completed
+13,2025-10-07,Client Payment - Innovate Inc,₹78000,completed
+14,2025-10-07,Professional Development Training,₹18000,completed
+15,2025-10-08,Equipment Purchase - Laptops,₹145000,completed
+16,2025-10-08,Insurance Premium - Monthly,₹9500,completed
+17,2025-10-09,Client Payment - WebWorks Agency,₹62000,completed
+18,2025-10-09,Travel Expenses - Client Meeting,₹8200,completed
+19,2025-10-10,Consulting Service - Tax Advisory,₹25000,completed
+20,2025-10-10,Maintenance & Repairs,₹4800,completed
+21,2025-10-11,Client Payment - GrowthPartners,₹156000,completed
+22,2025-10-11,Software Development Tools,₹22000,completed
+23,2025-10-12,Client Payment - DataFlow Systems,₹88000,completed
+24,2025-10-12,Advertising - Google Ads,₹18500,completed
+25,2025-10-13,Legal Services - Contract Review,₹15000,completed
+26,2025-10-13,Bank Charges & Fees,₹1200,completed
+27,2025-10-14,Client Payment - CloudTech,₹195000,completed
+28,2025-10-14,Team Building Event,₹12000,completed
+29,2025-10-15,Client Payment - SmartBiz Solutions,₹72000,completed
+30,2025-10-15,Accounting Software Subscription,₹8500,completed
+31,2025-10-16,Printing & Branding Materials,₹9200,completed
+32,2025-10-16,Parking & Transportation,₹3500,completed
+33,2025-10-17,Client Payment - FutureTech,₹142000,completed
+34,2025-10-17,Website Maintenance,₹6500,completed
+35,2025-10-18,Client Payment - Alpha Enterprises,₹98000,completed
+36,2025-10-18,Office Furniture,₹28000,completed
+37,2025-10-19,Cleaning Services - Monthly,₹5500,completed
+38,2025-10-19,Security System Upgrade,₹32000,completed
+39,2025-10-20,Client Payment - Beta Innovations,₹115000,completed
+40,2025-10-20,Domain & SSL Certificates,₹4200,completed
+41,2025-10-21,Client Payment - Gamma Tech,₹165000,completed
+42,2025-10-21,Employee Benefits & Perks,₹22000,completed
+43,2025-10-22,Client Payment - Delta Solutions,₹89000,completed
+44,2025-10-22,Courier & Logistics,₹2800,completed
+45,2025-10-23,Video Conferencing Tools,₹8500,completed
+46,2025-10-23,Client Payment - Epsilon Ventures,₹128000,completed
+47,2025-10-24,Content Writing Services,₹15000,completed
+48,2025-10-24,Client Payment - Zeta Corp,₹175000,completed
+49,2025-10-25,Mobile App Development Tools,₹35000,completed
+50,2025-10-25,Client Payment - Theta Industries,₹92000,completed
