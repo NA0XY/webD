@@ -71,6 +71,31 @@ github-pages/
 - Safari 13+
 - Edge 80+
 
+## Documentation
+
+### 📖 Understanding How It Works
+
+- **[HOW_IT_WORKS.md](HOW_IT_WORKS.md)** - Simple, beginner-friendly explanation of the animated background and floating card effects
+- **[TECHNICAL_EXPLANATION.md](TECHNICAL_EXPLANATION.md)** - Detailed technical deep-dive for developers, including code examples and architecture
+
+### Key Features Explained
+
+**Animated Background System:**
+The background consists of three layered elements:
+1. **Grid Pattern** - Subtle graph paper effect
+2. **Gradient Orbs** - Three large glowing spheres that float and pulse
+3. **Floating Shapes** - Circles, squares, and dots that create depth
+
+**Floating Credit Card:**
+The hero card uses multiple techniques:
+- Vertical floating animation (6-second cycle)
+- Rotating motion for realism
+- Sweeping shine effect
+- Pulsing glow effects
+- Contactless payment waves
+
+Read the documentation files above for complete details on how these effects are created!
+
 ## License
 
 This project is open source and available under the MIT License.
