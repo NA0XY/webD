@@ -111,7 +111,7 @@ Frame 1 (0s)              Frame 2 (1s)              Frame 3 (2s)              Fr
 │███        │             │    ███    │             │        ███│             │           │
 │███        │             │    ███    │             │        ███│             │           │
 └───────────┘             └───────────┘             └───────────┘             └───────────┘
-Off-screen left           Moving across              Almost off-screen        Cycle restarts
+Off-screen left           Moving across              Almost off-screen          Cycle restarts
                                                      
 Legend: ███ = Shine gradient (transparent → white → transparent)
 ```

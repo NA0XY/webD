@@ -524,7 +524,7 @@ backdrop-filter: blur(10px);
 border: 2px solid rgba(255, 255, 255, 0.1);
 ```
 
-2. **Organic Shapes**: Irregular border-radius values for hand-drawn feel
+2. **Organic Shapes**: Irregular border-radius values for a hand-drawn feel
 ```css
 border-radius: 26px 30px 28px 27px;  /* Each corner different */
 ```

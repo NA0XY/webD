@@ -11,7 +11,7 @@ When you open the FinanceIQ homepage, you see a beautiful, dynamic background th
 Imagine a piece of graph paper with very faint green lines. That's exactly what this layer is! It:
 - Stays fixed in place while you scroll
 - Creates a subtle tech-aesthetic feel
-- Uses a very light green color that barely visible (only 2% opacity)
+- Uses a very light green color that is barely visible (only 2% opacity)
 - Has squares that are 100 pixels wide
 
 **Purpose**: Gives the page a structured, professional look without being distracting.
